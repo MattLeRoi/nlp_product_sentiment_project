@@ -1,17 +1,17 @@
-# nlp_product_sentiment_project
+# NLP Product Sentiment
 
 **Author**: [Matt LeRoi](mailto:mcleroi@gmail.com) 
 
 # Overview
 
-In the telecom business, customers are generally on monthly or yearly contracts. The cost of acquisition of customers is high, so having sticky customers (customers that stick around once acquired and don't churn) is important. Therefore, predicting churn before it happens can reap huge financial benefits.
+Twitter offers a unique opportunity to get the publicly available opinions of a great many people about a wide variety of topics. It is, unfortunately, not organized neatly for easy digestion, and therefore requires analysis to sort, process, and gain useful information from an enormous volume of tweets.
 
 # Business Understanding
 
-The goal of this project is to create a model to predict churn in customers for SyriaTel, a telecom company. If customer churn can be identified before it happens, a retention strategy can be implemented before they churn. According to SyriaTel, the estimated lost profit due to churn is ~$240/customer and reaching out to a customer about to churn is ~⅓ effective, so the average profit from reaching out to a customer about to churn is ~$80. The cost of outreach is ~$20/customer. The cost of simply reaching out to all customers and retaining ⅓ of those about to churn would be a net loss of $28,000, so accurate prediction of customers likely to churn will be extremely valuable here. If one customer is correctly identified out of every four customers flagged for potential churn, this project will be net neutral. The model will seek a much higher bar than that, however, and will optimize for maximum profit.
+A stealth tech company is building a new product. Having failed a previous attempt at covert corporate espionage, they have hired me to gather positive public comments made on Twitter about Google and Apple products to help them understand people's favorite aspects of those products to incorporate them into their new product. The tool will flag tweets as either positive or non-positive (could be neutral or negative) for deeper analysis. The company has stated that they would like to flag as many positive tweets as possible while minimizing false positives (tweets incorrectly labeled as positive).
 
 # Data
-SyriaTel provided a subset of customer data. It included: 1 geographical location, 3 area codes, 3333 total customers, and 486 churning customers, with a 14.5% churn rate.
+The csv file has ~9000 tweets, each labeled by a human reviewer as positive, neutral, or negative. ~1/3 are positive and ~2/3 are either neutral or negative. The accuracy of these labels is limited by the judgement of the humans who labeled the list, as well as the vagaries of emotion generally. Also, this data's applicability to current technology and current language/slang trends may be limited by the fact that it is now over 10 years old.
 
 # Modeling
 
