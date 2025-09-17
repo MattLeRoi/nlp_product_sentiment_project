@@ -13,20 +13,22 @@ A stealth tech company is building a new product. Having failed a previous attem
 # Data
 The csv file has ~9000 tweets, each labeled by a human reviewer as positive, neutral, or negative. ~1/3 are positive and ~2/3 are either neutral or negative. The accuracy of these labels is limited by the judgement of the humans who labeled the list, as well as the vagaries of emotion generally. Also, this data's applicability to current technology and current language/slang trends may be limited by the fact that it is now over 10 years old.
 
+![emotion_counts.png](./images/emotion_counts.png)
+
 # Modeling
 
-Two models were created for this project: a logistic regression model and a decision tree classifier. These two were chosen because they can both handle making binary classification outcome predictions. Without knowing the type of relationship between the independent variables and the outcome (i.e. linear or more complex) beforehand, both models were created and compared. A baseline logistic regression model was created, then the data was scaled and oversampled (to combat the unbalanced data, since only 15% of customers churned). The baseline decision tree classifier was then created with various criteria and refined with hypertuning. During the tuning phase, a subset of the data was used for training and another set for validation. Once the parameters were set, the final evaluation was done using a final test set that wasn’t used during any of the training or tuning.
+I chose to use a TF-IDF vectorizer and logistic regression model as a straightforward first baseline model. The company wants to maximize the number of correctly identified tweets, but also doesn't want to have excessive false positives. Therefore the F1 score has been chosen as the metric by which these models will be judged, as it is a combination metric that takes into account both factors.
+This model was built to allow it to be called with multiple parameters specified and to be used for either a binary or multi-class classification, in case it was necessary to separate positive, neutral, and negative tweets. The run_pipe function takes in training data and parameters, then creates the pipeline, preps the data, trains the model, and returns the results.
 
 # Evaluation
 
-The goal of this project is financial, to increase profits for SyriaTel. The recall and precision scores are relevant, as we are trying to identify as many of the churning customers as possible (recall rate) while limiting the number of customers we reach out to unnecessarily (precision rate). To combine these two scores, I have taken the estimate provided by SyraiTel to directly calculate the actual financial impact to the company. Each correctly identified churning customer (True Positive, TP) is worth $80 on average, and every person SyriaTel reaches out to (True Positive plus False Positive, TP+FP) costs $20. The final evaluation criterion is then: $80TP + $20*(TP+FP), which is the total profit (or loss) of the experiment.
+It is time to see the final results! An F1 score of 0.67 is generally considered acceptable to moderately good. Given the difficulties even humans have in classifying the emotional content of a message, this seems like a respectable result. The F1 score for the test data on the best model is slightly below the F1 score for the validation data, which is not abnormal. This indicates that the model is not significantly overfit to the validation data, which was used to determine the parameters for the final model. The stealth company now has a pared down list of positive tweets to analyze to glean insights for their new product.
 
+![f1_scores.jpg](./images/f1__scores.jpg)
 
 # Conclusion
 
-The final logistic regression model achieved a profit of $1300, correctly identifying 35 out of 101 churning customers, with 40 falsely identified churning customers. This is a positive result, literally, with a positive dollar value associated with it, but identifying roughly a third of the churning customers is not nearly as accurate as I would like.
 
-The final hypertuned decision tree classifier model outperformed the logistic regression model, achieving a profit of $4180 after hypertuning, correctly identifying 75 out of 101 churning customers, with 16 falsely identified churning customers. 
 
 ## Limitations
 
@@ -34,19 +36,13 @@ The available data covers a small number of customers in one geographical area a
 
 ## Recommendations
 
-The model provided should yield positive results. Broader data, however, covering more of SyriaTel’s customers and containing more varied and detailed information, should help refine the model. Also, a few insights from how the classification tree was built:
-
-Customers with high usage and no voice mail plan churned at a very high rate, ~90%. I recommend looking into this group further. Is this line only used for a specific purpose and then closed? These could be high value customers since their usage is high, so the rewards for solving their high churn rate could be great.
-
-Customers with low usage and high customer service calls churned at a high rate, unsurprisingly. Looking for patterns in customer service calls may lead to better customer engagement with more usage and greater retention.
-
-Finally, customers with low usage, few customer service calls, and no international plan stayed at a relatively high rate. Generally speaking, customers with higher usage churned at a higher rate in several points in the tree. It may be worth looking into pricing strategies that reward greater use rather than a flat per-minute rate. This could help retain the high value customers and prompt other customers to use the service more.
+As mentioned above, sentiment in a tweet is hard to determine - by man or machine. The stealth company could have multiple humans reclassify the tweets to ensure greater consistency in the labeled training data, though this would be time-consuming. If they are satisfied with the results of this model, I would be excited to see a further analysis of the most positively associated words to see if any particular features or feelings or sentiments pop up that would lead to insights for their product.
 
 ![Classification_tree.png](./images/Classification_tree.png)
 
 ## For More Information
 
-See the full analysis in the [Jupyter Notebook](./notebook.ipynb).
+See the full analysis in the [Jupyter Notebook](./index.ipynb).
 
 For additional info, contact Matt LeRoi at [mcleroi@gmail.com](mailto:mcleroi@gmail.com)
 
