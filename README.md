@@ -25,9 +25,22 @@ I chose to use a TF-IDF vectorizer and logistic regression model as a straightfo
 
 ![f1_scores](https://github.com/user-attachments/assets/494cd7cc-1aaa-4f5e-94b1-ddc95fbc151f)
 
-# Evaluation 
+# Evaluation / Results
 
 It is time to see the final results! Running the highest performing model (analyzing 5000 words, without removing stopwords or lemmatization) yielded an F1 score of 0.667. This score is generally considered acceptable to moderately good. Given the difficulties even humans have in classifying the emotional content of a message, this seems like a respectable result. The F1 score for the test data on the best model is slightly below the F1 score for the validation data, which is not abnormal. This indicates that the model is not significantly overfit to the validation data, which was used to determine the parameters for the final model. The stealth company now has a pared down list of positive tweets to analyze to glean insights for their new product.
+
+Most positive words for the highest performing model:
+
+cool           
+wow            
+great          
+envy           
+makes          
+excited        
+woot           
+hot            
+genius         
+smart   
 
 ## Recommendations
 
