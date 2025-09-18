@@ -13,7 +13,7 @@ A stealth tech company is building a new product. Having failed a previous attem
 # Data
 A csv file with ~9000 tweets was downloaded from [data.world](https://data.world/crowdflower/brands-and-product-emotions). Each tweet is labeled by a human reviewer as positive, neutral, or negative. ~1/3 are positive and ~2/3 are either neutral or negative. 
 
-<img width="395" height="264" alt="emotion_counts" src="https://github.com/user-attachments/assets/c22ffb97-96d8-4a96-9bb0-7aa939b4f9e6" />
+![data](https://github.com/user-attachments/assets/494cd7cc-1aaa-4f5e-94b1-ddc95fbc151f)
 
 ## Limitations
 The accuracy of these labels is limited by the judgement of the humans who labeled the list, as well as the vagaries of emotion generally. Also, this data's applicability to current technology and current language/slang trends may be limited by the fact that it is now over 10 years old.
