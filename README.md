@@ -57,5 +57,5 @@ For additional info, contact Matt LeRoi at [mcleroi@gmail.com](mailto:mcleroi@gm
 ├── images
 ├── README.md
 ├── index.ipynb
-└── presentation.pdf
+└── [presentation.pdf](./presentation.pdf)
 ``` 
