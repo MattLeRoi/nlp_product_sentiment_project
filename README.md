@@ -48,7 +48,8 @@ As mentioned above, sentiment in a tweet is hard to determine - by man or machin
 
 ## For More Information
 
-For further details, see the [Jupyter Notebook](./index.ipynb) and [presentation](./presentation.pdf), and for additional info, or just to say hi, contact Matt LeRoi at [mcleroi@gmail.com](mailto:mcleroi@gmail.com)
+For further details, see the [Jupyter Notebook](./index.ipynb) and [presentation](./presentation.pdf), and for additional info, or just to say hi, contact:
+Matt LeRoi at [mcleroi@gmail.com](mailto:mcleroi@gmail.com)
 
 ```
 ├── data
