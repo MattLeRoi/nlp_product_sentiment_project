@@ -13,7 +13,7 @@ A stealth tech company is building a new product. Having failed a previous attem
 # Data
 A csv file with ~9000 tweets was downloaded from [data.world](https://data.world/crowdflower/brands-and-product-emotions). Each tweet is labeled by a human reviewer as positive, neutral, or negative. ~1/3 are positive and ~2/3 are either neutral or negative. 
 
-![data]([./images/data.jpg)
+![data]([/images/data.jpg)
 
 ## Limitations
 The accuracy of these labels is limited by the judgement of the humans who labeled the list, as well as the vagaries of emotion generally. Also, this data's applicability to current technology and current language/slang trends may be limited by the fact that it is now over 10 years old.
@@ -23,7 +23,7 @@ The accuracy of these labels is limited by the judgement of the humans who label
 The company wants to maximize the number of correctly identified tweets, but also doesn't want to have excessive false positives. Therefore the F1 score has been chosen as the metric by which these models will be judged, as it is a combination metric that takes into account both factors.
 I chose to use a TF-IDF vectorizer and logistic regression model as a straightforward first baseline model. The second model is a sequential neural network model. It was built to allow it to be called with varying parameters for tuning and to be used for either a binary or multi-class classification, in case it was necessary to separate positive, neutral, and negative tweets. The number of words captured in the model had an effect on the F1 score, but removing stopwords and lemmatization did not seem to have a consistently significant impact.
 
-![f1_scores]([./images/f1scores.jpg)
+![f1_scores]([/images/f1scores.jpg)
 
 # Evaluation / Results
 
